@@ -1,0 +1,3 @@
+function updateChatbotResponse(chatbotResponse) {
+  document.getElementById("chatbot-response").innerHTML = chatbotResponse;
+}
