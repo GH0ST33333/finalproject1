@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -6,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CoviTrack - Medical Category Bootstrap Responsive Website  | About :kshitij</title>
+    <title>CoviTrack - Medical Category Bootstrap Responsive Website  | made by kshitij</title>
     <!-- google fonts -->
     <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Template CSS -->
@@ -41,10 +40,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">About</a>
                         </li>
-                       
-                        <a class="nav-link" href="healthbot.html">Chatbot</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="healthbot.html">Chatbot</a>
                         </li>
-                        <a class="nav-link" href="healthbot.html">Live Chart</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="live chart.html">Live Chart</a>
                         </li>
                         <li class="nav-item mr-lg-1">
                             <a class="nav-link" href="contact.html">Contact</a>
@@ -107,6 +107,16 @@
     </div>
     <!-- hero slider end -->
     <!--/home-stats-->
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Statistics</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+<body>
     <section class="w3l-stats-main py-5">
         <div class="container py-lg-5 py-2">
             <div class="row stats-con">
@@ -114,32 +124,64 @@
                     <div class="icon stat-icon">
                         <i class="fab fa-keycdn"></i>
                     </div>
-                    <p class="counter">1233100</p>
+                    <p class="counter" id="active-cases">Loading...</p>
                     <h4>Active Cases</h4>
                 </div>
                 <div class="col-lg-3 col-6 stats_info counter_grid1 text-left mt-lg-0 mt-5">
                     <div class="icon stat-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <p class="counter">182020</p>
+                    <p class="counter" id="recovered-cases">Loading...</p>
                     <h4>Recovered Cases</h4>
                 </div>
                 <div class="col-lg-3 col-6 stats_info counter_grid text-left mt-lg-0 mt-5">
                     <div class="icon stat-icon">
                         <i class="fas fa-skull-crossbones"></i>
                     </div>
-                    <p class="counter">71912</p>
+                    <p class="counter" id="total-deaths">Loading...</p>
                     <h4>Total Deaths</h4>
                 </div>
                 <div class="col-lg-3 col-6 stats_info counter_grid text-left mt-lg-0 mt-5">
                     <div class="icon stat-icon">
                         <i class="fas fa-crutch"></i>
                     </div>
-                    <p class="counter">11912</p>
+                    <p class="counter" id="vaccination">Loading...</p>
                     <h4>Vaccination</h4>
                 </div>
             </div>
         </div>
+    </section>
+
+    <script>
+        // JavaScript code to fetch and update data
+        function fetchData() {
+            fetch('https://www.mohfw.gov.in/')
+                .then(response => response.text())
+                .then(data => {
+                    // Use DOM manipulation to extract data from 'data' and update the fields
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, 'text/html');
+
+                    const activeCasesValue = doc.querySelector('#activecases').textContent;
+                    const recoveredCasesValue = doc.querySelector('#recovered').textContent;
+                    const totalDeathsValue = doc.querySelector('#death').textContent;
+                    const vaccinationValue = doc.querySelector('#vaccine').textContent;
+
+                    document.getElementById('active-cases').textContent = activeCasesValue;
+                    document.getElementById('recovered-cases').textContent = recoveredCasesValue;
+                    document.getElementById('total-deaths').textContent = totalDeathsValue;
+                    document.getElementById('vaccination').textContent = vaccinationValue;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        // Fetch data initially and set up polling every 5 minutes
+        fetchData();
+        setInterval(fetchData, 300000); // 5 minutes (300,000 milliseconds)
+    </script>
+</body>
 
 
 
@@ -380,7 +422,7 @@
                               </div>
                               <div class="cont-right">
                                 <p><a href="mailto:example@mail.com" class="mail">
-                                    kumarkshitij622@gmail.com</a></p>
+                                    abc@gmail.com</a></p>
                               </div>
                             </div>
                           </div>

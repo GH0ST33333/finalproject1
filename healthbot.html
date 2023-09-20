@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>CoviTrack - Medical Category Bootstrap Responsive Website  | About :kshitij</title>
+  <title>CoviTrack - Medical Category Bootstrap Responsive Website  | made by kshitij</title>
   <!-- google fonts -->
   <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
   <!-- Template CSS -->
@@ -36,20 +36,18 @@
           <ul class="navbar-nav ml-lg-auto">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="healthbot.html">Chatbot</a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="services.html">Services</a>
+            <li class="nav-item">
+                <a class="nav-link" href="live chart.html">Live Chart</a>
             </li>
-            <a class="nav-link" href="healthbot.html">Chatbot</a>
-          </li>
-          <a class="nav-link" href="healthbot.html">Live Chart</a>
-        </li>
             <li class="nav-item mr-lg-1">
-              <a class="nav-link" href="contact.html">Contact</a>
-          </li>
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
            <!--/search-right-->
               <li class="header-search mr-lg-2 mt-lg-0 mt-4 position-relative">
                   <div class="search-right">
@@ -92,7 +90,7 @@
                     <h2 class="title AboutPageBanner">
                   Chatbot  </h2>
                               <p class="inner-page-para mt-2">
-                                Ask questions related to your query     </p>          
+                                Ask questions related to Covid19    </p>          
                                                               
           </div>
           <div class="w3breadcrumb-right">
@@ -107,31 +105,61 @@
   </div>
 </section>
 <!-- //breadcrumb -->
-<body>
-  <h1>My Chatbot</h1>
-  <script src="sourcecode.py"></script>
-  <div id="chatbot-box">
-    <h2>type here</h2>
-    <p id="chatbot-response"></p>
-    <div id="chatbot-box">
-      <h2></h2>
-      <p id="chatbot-response"></p>
-    </div>
-    
- <script>
-    function updateChatbotResponse(chatbotResponse) {
-      document.getElementById("chatbot-response").innerHTML = chatbotResponse;
+<!-- about -->
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+      margin: 0;
     }
-    
-    // Generate a chatbot response.
-    const chatbotResponse = generateChatbotResponse(user_input);
-    
-    // Update the chatbot response in the HTML box.
-    updateChatbotResponse(chatbotResponse);
- </script>
-    
+    .chat-container {
+      max-width: 100%; /* Adjust this value as needed */
+      margin: 0 auto;
+      border: 1px solid #000000;
+      border-radius: 10px;
+      padding: 10px; /* Adjust the padding as needed */
+      max-height: 100%; 
+      overflow-y: auto;
+    }
+    .user-message {
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      padding: 8px;
+      margin-bottom: 10px;
+      text-align: right;
+    }
+    .chatbot-message {
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container" id="chat-container">
+    <iframe
+      src="https://webchat.botframework.com/embed/healthbotagain1-2gdcsn7?s=taFCJFY1HT8.oRvJ7Qh0jh-XjSyEYtbkV7J5RgZ2wthG4I-QCQHUvJQ"
+      style="width: 100%; height: 350px; border: none;"
+    ></iframe>
   </div>
 </body>
+
+
+
+
+
+
+
+
+     
 
 
  
